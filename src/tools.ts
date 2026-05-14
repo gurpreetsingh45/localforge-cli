@@ -1,4 +1,6 @@
-import type { ToolDefinition } from "./types/tool.types.js";
+import { readFileSync, writeFileSync } from "node:fs"
+import { execSync } from "node:child_process"
+import type { ToolDefinition } from "./types/tool.types.js"
 
 export const tools: ToolDefinition[] = [
   {
@@ -45,3 +47,23 @@ export const tools: ToolDefinition[] = [
     },
   },
 ];
+
+export function executeTool(name: string, params : Record<string, string>) : string {
+    try{
+        if(name === "read_file"){
+        const data = readFileSync(params.path, "utf8");
+        return data;
+    } else if(name === "write_file"){
+        writeFileSync(params.path, params.content)
+        return "File write succesfull";
+    } else if(name === "run_command"){
+        const data = execSync(params.command, {encoding : 'utf8'});
+        return data;
+    } else{
+        throw new Error("Tool not found in tool definitions");
+    }
+    }
+    catch(err){
+        return `Error: ${err}`;
+    }
+}
