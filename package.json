@@ -1,0 +1,26 @@
+{
+  "name": "localforge-cli",
+  "version": "1.0.0",
+  "description": "A local AI coding agent built with Node.js, Ollama, and Ink.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurpreetsingh45/localforge-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gurpreetsingh45/localforge-cli/issues"
+  },
+  "homepage": "https://github.com/gurpreetsingh45/localforge-cli#readme",
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
